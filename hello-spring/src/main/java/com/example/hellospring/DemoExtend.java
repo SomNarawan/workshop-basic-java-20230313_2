@@ -7,6 +7,32 @@ public class DemoExtend {
     }
 }
 
+//ไม่มี flow ให้ object ที่ implement ไปทำตามความต้องการเอง
+interface Process {
+    void generateHeader();
+    void generateBody();
+    void generateFooter();
+}
+
+class Report2 implements Process {
+
+    @Override
+    public void generateHeader() {
+
+    }
+
+    @Override
+    public void generateBody() {
+
+    }
+
+    @Override
+    public void generateFooter() {
+
+    }
+}
+
+//มี flow บอกว่าต้องทำอะไรก่อนหลัง
 abstract class Report {
     abstract void generateHeader();
     abstract void generateBody();
