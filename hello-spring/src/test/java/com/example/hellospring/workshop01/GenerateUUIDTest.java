@@ -17,7 +17,10 @@ class GenerateUUIDTest {
    @Test
     public void getUUID() {
        GenerateUUID generateUUID = new GenerateUUID();
-      generateUUID.setRandom(new Random7());
+       generateUUID.setRandom(new Random7()); // Dependency Injection (DI)
+//       ส่ง random เข้าไปที่ generateUUID > Injection
+//       Random7 > Dependency เป็นสิ่งที่ generateUUID ต้องใช้
+//       รวมเป็น Dependency Injection (DI)
        String uuid = generateUUID.get("narawan");
        assertEquals("XYZnarawan7", uuid);
    }
