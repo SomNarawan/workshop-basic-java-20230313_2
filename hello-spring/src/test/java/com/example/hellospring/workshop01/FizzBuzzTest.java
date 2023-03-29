@@ -85,7 +85,7 @@ class FizzBuzzTest {
         Integer input = 7;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        String expectedResult = String.valueOf(7);
+        String expectedResult = "KBTG BASIC JAVA";
         String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);

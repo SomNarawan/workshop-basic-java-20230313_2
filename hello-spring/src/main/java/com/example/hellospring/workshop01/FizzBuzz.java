@@ -6,9 +6,11 @@ public class FizzBuzz {
         MyCondition[] conditions = new MyCondition[]{
                 new FizzBuzzCondition(),
                 new FizzCondition(),
-                new BuzzCondition()
+                new BuzzCondition(),
+                new KBTGCondition()
         };
 
+        // Check condition
         for (MyCondition condition : conditions) {
             if(condition.check(input)) {
                 return condition.print();
