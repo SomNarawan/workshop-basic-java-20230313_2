@@ -6,7 +6,10 @@ public class FizzBuzz {
         if(input%3 == 0){
             output = output.concat("Fizz");
         }
-        if(!output.contains("Fizz")){
+        if(input%5 == 0){
+            output = output.concat("Buzz");
+        }
+        if(!output.contains("Fizz") && !output.contains("Buzz")){
             output = String.valueOf(input);
         }
         return output;
