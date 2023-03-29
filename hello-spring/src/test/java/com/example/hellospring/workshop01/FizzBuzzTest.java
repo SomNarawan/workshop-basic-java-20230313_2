@@ -13,8 +13,8 @@ class FizzBuzzTest {
         Integer input = 1;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 1;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(1);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }
@@ -25,8 +25,8 @@ class FizzBuzzTest {
         Integer input = 2;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 2;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(2);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }
@@ -37,8 +37,8 @@ class FizzBuzzTest {
         Integer input = 4;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 4;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(4);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }
@@ -49,8 +49,8 @@ class FizzBuzzTest {
         Integer input = 7;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 7;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(7);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }
@@ -61,8 +61,8 @@ class FizzBuzzTest {
         Integer input = 8;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 8;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(8);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }
@@ -73,8 +73,8 @@ class FizzBuzzTest {
         Integer input = 11;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
-        Integer expectedResult = 11;
-        Integer actualResult = fizzBuzz.fizzBuzz(input);
+        String expectedResult = String.valueOf(11);
+        String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
     }

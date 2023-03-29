@@ -1,7 +1,7 @@
 package com.example.hellospring.workshop01;
 
 public class FizzBuzz {
-    public Integer fizzBuzz(Integer input){
-        return input;
+    public String fizzBuzz(Integer input){
+        return String.valueOf(input);
     }
 }
