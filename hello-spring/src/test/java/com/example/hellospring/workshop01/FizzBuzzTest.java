@@ -32,12 +32,36 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("input = 3")
+    public void case03() {
+        Integer input = 3;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String expectedResult = "Fizz";
+        String actualResult = fizzBuzz.fizzBuzz(input);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
     @DisplayName("input = 4")
     public void case04() {
         Integer input = 4;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
         String expectedResult = String.valueOf(4);
+        String actualResult = fizzBuzz.fizzBuzz(input);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    @DisplayName("input = 6")
+    public void case05() {
+        Integer input = 6;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String expectedResult = "Fizz";
         String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
@@ -68,12 +92,36 @@ class FizzBuzzTest {
     }
 
     @Test
+    @DisplayName("input = 9")
+    public void case09() {
+        Integer input = 9;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String expectedResult = "Fizz";
+        String actualResult = fizzBuzz.fizzBuzz(input);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
     @DisplayName("input = 11")
     public void case11() {
         Integer input = 11;
         FizzBuzz fizzBuzz = new FizzBuzz();
 
         String expectedResult = String.valueOf(11);
+        String actualResult = fizzBuzz.fizzBuzz(input);
+
+        assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    @DisplayName("input = 12")
+    public void case12() {
+        Integer input = 12;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        String expectedResult = "Fizz";
         String actualResult = fizzBuzz.fizzBuzz(input);
 
         assertEquals(expectedResult, actualResult);
