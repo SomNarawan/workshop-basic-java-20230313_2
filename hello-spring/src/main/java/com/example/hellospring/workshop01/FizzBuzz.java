@@ -6,7 +6,10 @@ public class FizzBuzz {
         if(fizzBuzzCondition.check(input)){
             return fizzBuzzCondition.print();
         }
-        if(input%3 == 0) return "Fizz";
+        FizzCondition fizzCondition = new FizzCondition();
+        if(fizzCondition.check(input)){
+            return fizzCondition.print();
+        }
         if(input%5 == 0) return "Buzz";
         return String.valueOf(input);
     }
