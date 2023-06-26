@@ -10,8 +10,10 @@ import java.util.Random;
 
 @RestController
 public class EmployeeController {
+//    private MyRandom random = new MyRandom();
     @Autowired
     private MyRandom random;
+
 
     @GetMapping("/employee/{id2}")
     public EmployeeResponse getEmployeeById(@PathVariable(name = "id2") String id) {
