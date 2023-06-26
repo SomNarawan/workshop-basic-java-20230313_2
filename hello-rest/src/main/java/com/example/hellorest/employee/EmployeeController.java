@@ -24,7 +24,8 @@ public class EmployeeController {
     // employee?id2=?
     @GetMapping("/employee")
 //    public EmployeeResponse getEmployeeById2(@RequestParam(defaultValue = "100") String id) {
-    public EmployeeResponse getEmployeeById2(@RequestParam(name = "id2") String id) {
+//    public EmployeeResponse getEmployeeById2(@RequestParam(name = "id2") String id) {
+    public EmployeeResponse getEmployeeById2(@RequestParam String id) {
         // Validate id => Number Only
         int _id = 0;
         try {
