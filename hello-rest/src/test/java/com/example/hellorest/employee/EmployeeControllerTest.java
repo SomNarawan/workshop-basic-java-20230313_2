@@ -8,6 +8,8 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 public class EmployeeControllerTest {
@@ -20,6 +22,11 @@ public class EmployeeControllerTest {
 
     @Test
     public void  callAPIWithPathVariable() {
+        // Mock/Stub/Spy
+//        when(random.nextInt(10)).thenReturn(5);
+        when(random.nextInt(anyInt())).thenReturn(5);
+
+        // Testing
         EmployeeResponse expected = new EmployeeResponse(123, "Somkiat5", "Pui");
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
         assertEquals(123,response.getId());
