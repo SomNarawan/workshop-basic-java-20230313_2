@@ -25,13 +25,12 @@ public class EmployeeControllerTest {
         // Mock/Stub/Spy
 //        when(random.nextInt(10)).thenReturn(5);
         when(random.nextInt(anyInt())).thenReturn(5);
-
         // Testing
         EmployeeResponse expected = new EmployeeResponse(123, "Somkiat5", "Pui");
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
-        assertEquals(123,response.getId());
-        assertEquals("Somkiat5",response.getFname());
-        assertEquals("Pui",response.getLname());
+//        assertEquals(123,response.getId());
+//        assertEquals("Somkiat5",response.getFname());
+//        assertEquals("Pui",response.getLname());
         assertEquals(expected, response);
     }
 
