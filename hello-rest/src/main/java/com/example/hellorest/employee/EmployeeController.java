@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class EmployeeController {
 
-    @GetMapping("/employee/{id}")
-    public EmployeeResponse getEmployeeById(@PathVariable String id) {
+    @GetMapping("/employee/{id2}")
+    public EmployeeResponse getEmployeeById(@PathVariable(name = "id2") String id) {
         // Validate id => Number Only
         int _id = 0;
         try {
@@ -21,9 +21,10 @@ public class EmployeeController {
         return new EmployeeResponse(_id, "Somkiat", "Pui");
     }
 
-    // employee?id=?
+    // employee?id2=?
     @GetMapping("/employee")
-    public EmployeeResponse getEmployeeById2(@RequestParam String id) {
+//    public EmployeeResponse getEmployeeById2(@RequestParam(defaultValue = "100") String id) {
+    public EmployeeResponse getEmployeeById2(@RequestParam(name = "id2") String id) {
         // Validate id => Number Only
         int _id = 0;
         try {
