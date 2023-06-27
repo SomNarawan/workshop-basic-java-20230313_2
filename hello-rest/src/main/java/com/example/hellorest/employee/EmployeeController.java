@@ -1,10 +1,9 @@
 package com.example.hellorest.employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Random;
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -24,8 +23,13 @@ public class EmployeeController {
     @Autowired
     private Random random;
 */
-    @GetMapping("/employee/{id2}")
-    public EmployeeResponse getEmployeeById(@PathVariable(name = "id2") String id) {
+    @Autowired
+    private EmployeeRepository repository;
+
+//    @GetMapping("/employee/{id2}")
+//    public EmployeeResponse getEmployeeById(@PathVariable(name = "id2") String id) {
+    @GetMapping("/employee/{id}")
+    public EmployeeResponse getEmployeeById(@PathVariable String id) {
         // Validate id => Number Only
         int _id = 0;
         try {
@@ -36,7 +40,21 @@ public class EmployeeController {
         }
         // Workshop
         int number = random.nextInt(10);
-        return new EmployeeResponse(_id, "Somkiat" + number, "Pui");
+
+        // Call repository
+//        try {
+//            Employee employee = repository.getById(_id);
+//            return new EmployeeResponse(_id, employee.getFirstName(), employee.getLastName());
+//        }catch (Exception e){
+//            return new EmployeeResponse();
+//        }
+        Optional<Employee> result = repository.findById(_id);
+        if(result.isPresent()) {
+            Employee employee = result.get();
+            return new EmployeeResponse(_id, employee.getFirstName() + number, employee.getLastName());
+        }
+        // Not found ?
+        return new EmployeeResponse();
     }
 
     // employee?id2=?

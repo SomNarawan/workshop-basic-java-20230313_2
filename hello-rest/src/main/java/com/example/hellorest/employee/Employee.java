@@ -7,7 +7,7 @@ import javax.persistence.*;
 //@Table(name = "t_emp")
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
 //    @Column(name = "fname")
@@ -20,6 +20,12 @@ public class Employee {
     }
 
     public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Employee(int id, String firstName, String lastName) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
