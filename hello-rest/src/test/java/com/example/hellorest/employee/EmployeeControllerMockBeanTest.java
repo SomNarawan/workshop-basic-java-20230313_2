@@ -2,6 +2,7 @@ package com.example.hellorest.employee;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 
@@ -12,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class EmployeeControllerMockBeanTest {
     @Autowired
     private TestRestTemplate restTemplate;
@@ -42,6 +44,7 @@ public class EmployeeControllerMockBeanTest {
         assertEquals("Mock lname",response.getLname());
         assertEquals(expected, response);
     }
+
     @Test
     public void  callAPIWithPathVariableAndWithoutDatabaseAndEmployeeNotFound() {
         // Mock/Stub/Spy
@@ -51,7 +54,7 @@ public class EmployeeControllerMockBeanTest {
         when(repository.findById(123)).thenReturn(Optional.empty());
 
         // Testing
-        EmployeeResponse expected = new EmployeeResponse(123, "Mock fname5", "Mock lname");
+        EmployeeResponse expected = new EmployeeResponse();
 
         // Call API
         EmployeeResponse response = restTemplate.getForObject("/employee/123", EmployeeResponse.class);
