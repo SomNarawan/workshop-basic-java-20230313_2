@@ -7,24 +7,8 @@ import java.util.Optional;
 
 @RestController
 public class EmployeeController {
-//    1 Class Level
-//    private MyRandom random = new MyRandom();
     @Autowired
-    private MyRandom random;
-
-/*
-//    2 Method Level
-//    Configuration (in HelloRestApplication.java and other)
-    @Bean
-    public  Random createNewRandom() {
-        return new Random();
-    }
-//    use
-    @Autowired
-    private Random random;
-*/
-    @Autowired
-    private EmployeeRepository repository;
+    private EmployeeService employeeService;
 
 //    @GetMapping("/employee/{id2}")
 //    public EmployeeResponse getEmployeeById(@PathVariable(name = "id2") String id) {
@@ -38,23 +22,9 @@ public class EmployeeController {
             // ERROR => TODO ?
 
         }
-        // Workshop
-        int number = random.nextInt(10);
 
-        // Call repository
-//        try {
-//            Employee employee = repository.getById(_id);
-//            return new EmployeeResponse(_id, employee.getFirstName(), employee.getLastName());
-//        }catch (Exception e){
-//            return new EmployeeResponse();
-//        }
-        Optional<Employee> result = repository.findById(_id);
-        if(result.isPresent()) {
-            Employee employee = result.get();
-            return new EmployeeResponse(_id, employee.getFirstName() + number, employee.getLastName());
-        }
-        // Not found ?
-        return new EmployeeResponse();
+        EmployeeResponse employeeResponse = employeeService.process(_id);
+        return employeeResponse;
     }
 
     // employee?id2=?
